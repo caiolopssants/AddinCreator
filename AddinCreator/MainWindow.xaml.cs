@@ -39,6 +39,11 @@ namespace AddinCreator
                     else
                     {
                         if (command_CheckBox.IsChecked.GetValueOrDefault() && application_CheckBox.IsChecked.GetValueOrDefault()) { document = CreatCommandApplicationAddinDoc(addin_Title_TextBox_Com.Text, addin_Description_TextBox_Com.Text, assembly_Path_TextBox_Com.Text, assembly_FullClassName_TextBox_Com.Text, Guid.Parse(clientID_GUID_TextBox_Com.Text), vendorID_TextBox_Com.Text, vendorID_Description_TextBox_Com.Text, addin_Title_TextBox_App.Text, assembly_Path_TextBox_App.Text, assembly_FullClassName_TextBox_App.Text, Guid.Parse(clientID_GUID_TextBox_App.Text), vendorID_TextBox_App.Text, vendorID_Description_TextBox_Com.Text); }
+                        else
+                        {
+                            MessageBox.Show("Select any options: \n\n*Command; \n*Application.");
+                            return;
+                        }
                     }
                 }
             }
@@ -92,10 +97,10 @@ namespace AddinCreator
                 $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
                 $@"<RevitAddIns>",
                 $@"  <AddIn Type={"\""}Command{"\""}>",
-                $@"    <Text>Command {addinTitle}</Text>",
+                $@"    <Text>{addinTitle}</Text>",
                 $@"    <Description>{addinDescription}</Description>",
                 $@"    <Assembly>{assemblyPath}</Assembly>",
-                $@"    <FullClassName>{fullClassName}.Command</FullClassName>",
+                $@"    <FullClassName>{fullClassName}</FullClassName>",
                 $@"    <ClientId>{clientID}</ClientId>",
                 $@"    <VendorId>{vendorID}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
                 $@"    <VendorDescription>{vendorDescription}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
@@ -113,7 +118,7 @@ namespace AddinCreator
                 $@"  <AddIn Type={"\""}Application{"\""}>",
                 $@"    <Name>App {addinTitle}</Name>",
                 $@"    <Assembly>{assemblyPath}</Assembly>",
-                $@"    <FullClassName>{fullClassName}.App</FullClassName>",
+                $@"    <FullClassName>{fullClassName}</FullClassName>",
                 $@"    <ClientId>{clientID}</ClientId>",
                 $@"    <VendorId>{vendorID}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
                 $@"    <VendorDescription>{vendorDescription}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
@@ -126,21 +131,21 @@ namespace AddinCreator
         {
             return new List<string>()
             {
-                $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
+                   $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
                 $@"<RevitAddIns>",
                 $@"  <AddIn Type={"\""}Command{"\""}>",
-                $@"    <Text>Command {addinTitle_Command}</Text>",
+                $@"    <Text>{addinTitle_Command}</Text>",
                 $@"    <Description>{addinDescription_Command}</Description>",
                 $@"    <Assembly>{assemblyPath_Command}</Assembly>",
-                $@"    <FullClassName>{fullClassName_Command}.Command</FullClassName>",
+                $@"    <FullClassName>{fullClassName_Command}</FullClassName>",
                 $@"    <ClientId>{clientID_Command}</ClientId>",
                 $@"    <VendorId>{vendorID_Command}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
                 $@"    <VendorDescription>{vendorDescription_Command}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
                 $@"  </AddIn>",
                 $@"  <AddIn Type={"\""}Application{"\""}>",
-                $@"    <Name>App {addinTitle_Application}</Name>",
+                $@"    <Name>{addinTitle_Application}</Name>",
                 $@"    <Assembly>{assemblyPath_Application}</Assembly>",
-                $@"    <FullClassName>{fullClassName_Application}.App</FullClassName>",
+                $@"    <FullClassName>{fullClassName_Application}</FullClassName>",
                 $@"    <ClientId>{clientID_Application}</ClientId>",
                 $@"    <VendorId>{vendorID_Application}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
                 $@"    <VendorDescription>{vendorDescription_Application}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",

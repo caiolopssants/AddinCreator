@@ -5,54 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddinCreator"
         mc:Ignorable="d"
-        Title="Addin Creator V1.0 (2020)" Height="414.194" Width="795.971">
+        Title="Addin Creator V1.0 (2020)" Height="414.194" Width="862.637">
     <Grid x:Name="___Sem_Nome_" Margin="0,0,-0.333,-0.333">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
-                <GradientStop Color="Red" Offset="0.244"/>
+                <GradientStop Color="#FF0083FF" Offset="0.244"/>
                 <GradientStop Color="Black" Offset="1"/>
-                <GradientStop Color="Red" Offset="0.728"/>
+                <GradientStop Color="Black" Offset="1"/>
                 <GradientStop Color="Black" Offset="0.421"/>
                 <GradientStop Color="Black" Offset="0.567"/>
+                <GradientStop Color="#FF007EF5" Offset="0.244"/>
+                <GradientStop Color="#FF0081FC" Offset="0.742"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="379*"/>
-            <ColumnDefinition Width="392*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="43*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox x:Name="command_CheckBox" Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <CheckBox x:Name="application_CheckBox" Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140.333,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Width="81" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Addin Title: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,39,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Addin description: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,71,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Assembly path: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,103,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Full class name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,134,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Client ID (GUID):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,165,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="addin_Title_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,39,11.667,0" MaxLines="1"/>
-        <TextBox x:Name="addin_Description_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,71,11.667,0" MaxLines="1"/>
-        <TextBox x:Name="assembly_Path_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,103,11.667,0" MaxLines="1"/>
-        <TextBox x:Name="assembly_FullClassName_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,134,11.667,0" MaxLines="1"/>
-        <TextBox x:Name="clientID_GUID_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,165,11.667,0" MaxLength="36" MaxLines="1"/>
-        <Button x:Name="creatAddin_Button" Content="Creat Addin Document" VerticalAlignment="Top" Margin="10,311,14.333,0" Click="Button_Click" Height="48" Grid.ColumnSpan="2" Foreground="White" Background="Black"/>
-        <CheckBox x:Name="generateGUID_CheckBox_Com" Content="Gerar GUID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,193,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Width="212" Unchecked="GenerateGUID_CheckBox_Com_Unchecked" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Vendor ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,213,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="vendorID_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,213,11.667,0" MaxLines="1"/>
-        <Label Content="Vendor ID description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,245,0,0" Width="144" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="vendorID_Description_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,245,11.667,0" MaxLines="1"/>
-        <Label Content="Addin Title: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,39,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Assembly path: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,103,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Full class name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,134,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Client ID (GUID):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,165,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="addin_Title_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,39,14.333,0" MaxLines="1" Grid.Column="1"/>
-        <TextBox x:Name="assembly_Path_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,103,14.333,0" MaxLines="1" Grid.Column="1"/>
-        <TextBox x:Name="assembly_FullClassName_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,134,14.333,0" MaxLines="1" Grid.Column="1"/>
-        <TextBox x:Name="clientID_GUID_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,165,14.333,0" MaxLength="36" MaxLines="1" Grid.Column="1"/>
-        <CheckBox x:Name="generateGUID_CheckBox_App" Content="Gerar GUID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155.333,193,0,0" Checked="GenerateGUID_CheckBox_App_Checked" Width="217" Unchecked="GenerateGUID_CheckBox_App_Unchecked" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Vendor ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,213,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="vendorID_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,213,14.333,0" MaxLines="1" Grid.Column="1"/>
-        <Label Content="Vendor ID description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,245,0,0" Width="140" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="vendorID_Description_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,245,14.333,0" MaxLines="1" Grid.Column="1"/>
-        <Label Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,8,0,0" Width="96" FontSize="16" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="White"/>
-        <Label Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.333,8,0,0" Width="96" FontSize="16" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Grid.Column="1" Background="{x:Null}" Foreground="White"/>
+        <CheckBox x:Name="command_CheckBox" Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Width="366" Height="16"/>
+        <CheckBox x:Name="application_CheckBox" Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Width="388" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="15"/>
+        <Label Content="Addin Title: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,39,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Addin description: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,71,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Assembly path: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,103,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Full class name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,134,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Client ID (GUID):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,165,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="25"/>
+        <TextBox x:Name="addin_Title_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,39,11,0" MaxLines="1"/>
+        <TextBox x:Name="addin_Description_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,71,11,0" MaxLines="1"/>
+        <TextBox x:Name="assembly_Path_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,103,11,0" MaxLines="1"/>
+        <TextBox x:Name="assembly_FullClassName_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,134,11,0" MaxLines="1"/>
+        <TextBox x:Name="clientID_GUID_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,165,11,0" MaxLength="36" MaxLines="1"/>
+        <Button x:Name="creatAddin_Button" Content="Creat Addin Document" VerticalAlignment="Top" Margin="10,311,14,0" Click="Button_Click" Height="48" Grid.ColumnSpan="2" Foreground="White" Background="Black"/>
+        <CheckBox x:Name="generateGUID_CheckBox_Com" Content="Gerar GUID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,193,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Width="212" Unchecked="GenerateGUID_CheckBox_Com_Unchecked" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="15"/>
+        <Label Content="Vendor ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,213,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="25"/>
+        <TextBox x:Name="vendorID_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,213,11,0" MaxLines="1"/>
+        <Label Content="Vendor ID description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,245,0,0" Width="144" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <TextBox x:Name="vendorID_Description_TextBox_Com" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="154,245,11,0" MaxLines="1"/>
+        <Label Content="Addin Title: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,39,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Assembly path: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Full class name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,134,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <Label Content="Client ID (GUID):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,165,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="25"/>
+        <TextBox x:Name="addin_Title_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,39,14,0" MaxLines="1" Grid.Column="1"/>
+        <TextBox x:Name="assembly_Path_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,103,14,0" MaxLines="1" Grid.Column="1"/>
+        <TextBox x:Name="assembly_FullClassName_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,134,14,0" MaxLines="1" Grid.Column="1"/>
+        <TextBox x:Name="clientID_GUID_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,165,14,0" MaxLength="36" MaxLines="1" Grid.Column="1"/>
+        <CheckBox x:Name="generateGUID_CheckBox_App" Content="Gerar GUID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,193,0,0" Checked="GenerateGUID_CheckBox_App_Checked" Width="217" Unchecked="GenerateGUID_CheckBox_App_Unchecked" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="15"/>
+        <Label Content="Vendor ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,213,0,0" Width="125" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="25"/>
+        <TextBox x:Name="vendorID_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,213,14,0" MaxLines="1" Grid.Column="1"/>
+        <Label Content="Vendor ID description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,245,0,0" Width="140" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
+        <TextBox x:Name="vendorID_Description_TextBox_App" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,245,14,0" MaxLines="1" Grid.Column="1"/>
+        <Label Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,8,0,0" Width="96" FontSize="16" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="White" Height="29"/>
+        <Label Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,8,0,0" Width="96" FontSize="16" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Grid.Column="1" Background="{x:Null}" Foreground="White" Height="29"/>
     </Grid>
 </Window>
