@@ -25,6 +25,12 @@ namespace AddinCreator
         public MainWindow()
         {
             InitializeComponent();
+            SetSizeParameters();            
+        }
+
+        private void SetSizeParameters()
+        {
+            this.MaxHeight = this.Height;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,13 +38,13 @@ namespace AddinCreator
             List<string> document = new List<string>();
             try
             {
-                if (command_CheckBox.IsChecked.GetValueOrDefault() && !application_CheckBox.IsChecked.GetValueOrDefault()) { document = CreatCommandAddinDoc(addin_Title_TextBox_Com.Text, addin_Description_TextBox_Com.Text, assembly_Path_TextBox_Com.Text, assembly_FullClassName_TextBox_Com.Text, Guid.Parse(clientID_GUID_TextBox_Com.Text), vendorID_TextBox_Com.Text, vendorID_Description_TextBox_Com.Text); }
+                if (command_CheckBox.IsChecked.GetValueOrDefault() && !application_CheckBox.IsChecked.GetValueOrDefault()) { document = Methods.CreatCommandAddinDoc(addin_Title_TextBox_Com.Text, addin_Description_TextBox_Com.Text, assembly_Path_TextBox_Com.Text, assembly_FullClassName_TextBox_Com.Text, Guid.Parse(clientID_GUID_TextBox_Com.Text), vendorID_TextBox_Com.Text, vendorID_Description_TextBox_Com.Text); }
                 else
                 {
-                    if (!command_CheckBox.IsChecked.GetValueOrDefault() && application_CheckBox.IsChecked.GetValueOrDefault()) { document = CreatApplicationAddinDoc(addin_Title_TextBox_App.Text, assembly_Path_TextBox_App.Text, assembly_FullClassName_TextBox_App.Text, Guid.Parse(clientID_GUID_TextBox_App.Text), vendorID_TextBox_App.Text, vendorID_Description_TextBox_Com.Text); }
+                    if (!command_CheckBox.IsChecked.GetValueOrDefault() && application_CheckBox.IsChecked.GetValueOrDefault()) { document = Methods.CreatApplicationAddinDoc(addin_Title_TextBox_App.Text, assembly_Path_TextBox_App.Text, assembly_FullClassName_TextBox_App.Text, Guid.Parse(clientID_GUID_TextBox_App.Text), vendorID_TextBox_App.Text, vendorID_Description_TextBox_Com.Text); }
                     else
                     {
-                        if (command_CheckBox.IsChecked.GetValueOrDefault() && application_CheckBox.IsChecked.GetValueOrDefault()) { document = CreatCommandApplicationAddinDoc(addin_Title_TextBox_Com.Text, addin_Description_TextBox_Com.Text, assembly_Path_TextBox_Com.Text, assembly_FullClassName_TextBox_Com.Text, Guid.Parse(clientID_GUID_TextBox_Com.Text), vendorID_TextBox_Com.Text, vendorID_Description_TextBox_Com.Text, addin_Title_TextBox_App.Text, assembly_Path_TextBox_App.Text, assembly_FullClassName_TextBox_App.Text, Guid.Parse(clientID_GUID_TextBox_App.Text), vendorID_TextBox_App.Text, vendorID_Description_TextBox_Com.Text); }
+                        if (command_CheckBox.IsChecked.GetValueOrDefault() && application_CheckBox.IsChecked.GetValueOrDefault()) { document = Methods.CreatCommandApplicationAddinDoc(addin_Title_TextBox_Com.Text, addin_Description_TextBox_Com.Text, assembly_Path_TextBox_Com.Text, assembly_FullClassName_TextBox_Com.Text, Guid.Parse(clientID_GUID_TextBox_Com.Text), vendorID_TextBox_Com.Text, vendorID_Description_TextBox_Com.Text, addin_Title_TextBox_App.Text, assembly_Path_TextBox_App.Text, assembly_FullClassName_TextBox_App.Text, Guid.Parse(clientID_GUID_TextBox_App.Text), vendorID_TextBox_App.Text, vendorID_Description_TextBox_Com.Text); }
                         else
                         {
                             MessageBox.Show("Select any options: \n\n*Command; \n*Application.");
@@ -88,70 +94,6 @@ namespace AddinCreator
         private void GenerateGUID_CheckBox_App_Unchecked(object sender, RoutedEventArgs e)
         {
             clientID_GUID_TextBox_App.IsEnabled = true;
-        }
-
-        List<string> CreatCommandAddinDoc(string addinTitle, string addinDescription, string assemblyPath, string fullClassName, Guid clientID, string vendorID, string vendorDescription)
-        {
-            return new List<string>()
-            {
-                $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
-                $@"<RevitAddIns>",
-                $@"  <AddIn Type={"\""}Command{"\""}>",
-                $@"    <Text>{addinTitle}</Text>",
-                $@"    <Description>{addinDescription}</Description>",
-                $@"    <Assembly>{assemblyPath}</Assembly>",
-                $@"    <FullClassName>{fullClassName}</FullClassName>",
-                $@"    <ClientId>{clientID}</ClientId>",
-                $@"    <VendorId>{vendorID}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
-                $@"    <VendorDescription>{vendorDescription}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
-                $@"  </AddIn>",
-                $@"</RevitAddIns>",
-            };
-        }
-
-        List<string> CreatApplicationAddinDoc(string addinTitle, string assemblyPath, string fullClassName, Guid clientID, string vendorID, string vendorDescription)
-        {
-            return new List<string>()
-            {
-                $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
-                $@"<RevitAddIns>",
-                $@"  <AddIn Type={"\""}Application{"\""}>",
-                $@"    <Name>App {addinTitle}</Name>",
-                $@"    <Assembly>{assemblyPath}</Assembly>",
-                $@"    <FullClassName>{fullClassName}</FullClassName>",
-                $@"    <ClientId>{clientID}</ClientId>",
-                $@"    <VendorId>{vendorID}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
-                $@"    <VendorDescription>{vendorDescription}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
-                $@"  </AddIn>",
-                $@"</RevitAddIns>",
-            };
-        }
-
-        List<string> CreatCommandApplicationAddinDoc(string addinTitle_Command, string addinDescription_Command, string assemblyPath_Command, string fullClassName_Command, Guid clientID_Command, string vendorID_Command, string vendorDescription_Command, string addinTitle_Application, string assemblyPath_Application, string fullClassName_Application, Guid clientID_Application, string vendorID_Application, string vendorDescription_Application)
-        {
-            return new List<string>()
-            {
-                   $@"<?xml version={"\""}1.0{"\""} encoding={"\""}utf-8{"\""}?>",
-                $@"<RevitAddIns>",
-                $@"  <AddIn Type={"\""}Command{"\""}>",
-                $@"    <Text>{addinTitle_Command}</Text>",
-                $@"    <Description>{addinDescription_Command}</Description>",
-                $@"    <Assembly>{assemblyPath_Command}</Assembly>",
-                $@"    <FullClassName>{fullClassName_Command}</FullClassName>",
-                $@"    <ClientId>{clientID_Command}</ClientId>",
-                $@"    <VendorId>{vendorID_Command}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
-                $@"    <VendorDescription>{vendorDescription_Command}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
-                $@"  </AddIn>",
-                $@"  <AddIn Type={"\""}Application{"\""}>",
-                $@"    <Name>{addinTitle_Application}</Name>",
-                $@"    <Assembly>{assemblyPath_Application}</Assembly>",
-                $@"    <FullClassName>{fullClassName_Application}</FullClassName>",
-                $@"    <ClientId>{clientID_Application}</ClientId>",
-                $@"    <VendorId>{vendorID_Application}</VendorId>",//$@"    <VendorId>br.com.mha</VendorId>",
-                $@"    <VendorDescription>{vendorDescription_Application}</VendorDescription>",//$@"    <VendorDescription>MHA Engenharia LTDA</VendorDescription>",
-                $@"  </AddIn>",
-                $@"</RevitAddIns>",
-            };
-        }
+        }        
     }
 }

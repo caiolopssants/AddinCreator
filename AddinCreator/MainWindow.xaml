@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddinCreator"
         mc:Ignorable="d"
-        Title="Addin Creator V1.0 (2020)" Height="414.194" Width="862.637">
+        Title="Addin Creator V1.0 (2020)" Height="414.194" Width="862.637" WindowStartupLocation="CenterScreen" Icon="pack://siteoforigin:,,,/image_ico.ico">
     <Grid x:Name="___Sem_Nome_" Margin="0,0,-0.333,-0.333">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -23,8 +23,8 @@
             <ColumnDefinition Width="42*"/>
             <ColumnDefinition Width="43*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox x:Name="command_CheckBox" Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Width="366" Height="16"/>
-        <CheckBox x:Name="application_CheckBox" Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Checked="GenerateGUID_CheckBox_Com_Checked" Width="388" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="15"/>
+        <CheckBox x:Name="command_CheckBox" Content="Command" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Width="366" Height="16"/>
+        <CheckBox x:Name="application_CheckBox" Content="Application" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,291,0,0" Width="388" Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="15"/>
         <Label Content="Addin Title: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,39,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
         <Label Content="Addin description: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,71,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
         <Label Content="Assembly path: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,103,0,0" Width="125" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontStyle="Italic" Height="24"/>
